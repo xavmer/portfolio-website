@@ -1,12 +1,12 @@
 const experiences = [
   {
     title: "Software Engineer Intern",
-    company: "Company Name",
+    company: "512Innovations",
     period: "Summer 2025",
     description: [
-      "Developed and maintained web applications using modern frameworks",
-      "Collaborated with cross-functional teams to deliver features",
-      "Participated in code reviews and improved code quality",
+      "Developed and maintained mobile applications using modern frameworks",
+      "Published app to app store, after testing and debugging",
+      "Rewrote legacy code to improve code quality and maintainability",
     ],
   },
   {

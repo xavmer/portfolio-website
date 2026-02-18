@@ -1,26 +1,26 @@
 const education = [
   {
     degree: "Bachelor of Science in Computer Science",
-    institution: "University Name",
-    location: "City, State",
-    period: "2020 - 2024",
-    gpa: "3.8/4.0",
+    institution: "University of Texas at Austin",
+    location: "Austin, TX",
+    period: "2024 - 2028",
+    gpa: "3.77/4.0",
+    logo: "images/ut-logo.png",
     achievements: [
-      "Dean's List all semesters",
-      "Relevant Coursework: Data Structures, Algorithms, Web Development, Database Systems",
-      "Member of Computer Science Club",
+      "Relevant Coursework: Data Structures, Algorithms, Operating Systems, Computer Architecture, Discrete Mathematics",
+      "Member of ACM, University Securities and Investment Team, Quantitative Market Intelligence, and the Texas Iron Spikes",
     ],
   },
   {
     degree: "High School Diploma",
-    institution: "High School Name",
-    location: "City, State",
-    period: "2016 - 2020",
-    gpa: "3.9/4.0",
+    institution: "Vandegrift High School",
+    location: "Austin, TX",
+    period: "2020 - 2024",
+    gpa: "4.0 UW/5.5 W",
+    logo: "images/vandegrift-high-school-logo.png",
     achievements: [
-      "Valedictorian",
-      "National Honor Society",
-      "AP Computer Science A - Score: 5",
+      "Top 5%, involved in Incubator.edu, PALS, Destination Imagination, Mountain Biking Team and Rake the Lake",
+      "Global Champion in the engineering category and science category in Destination Imagination",
     ],
   },
 ];
@@ -28,10 +28,22 @@ const education = [
 export default function Education() {
   return (
     <section id="education" className="py-24 bg-white dark:bg-[#0d1912]">
+      {/* Campus backdrop */}
+      <div className="relative h-96 mb-16 overflow-hidden">
+        <img 
+          src="/images/ut-banner.jpeg"
+          alt="UT Campus"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-black/30 to-white dark:from-[#0d1912]/80 dark:via-black/30 dark:to-[#0d1912]"></div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight drop-shadow-2xl">
+            Education
+          </h2>
+        </div>
+      </div>
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-5xl font-bold text-center mb-16 text-[#1a3329] dark:text-[#e8f3ed] tracking-tight">
-          Education
-        </h2>
         <div className="space-y-8">
           {education.map((edu, index) => (
             <div
@@ -39,15 +51,23 @@ export default function Education() {
               className="group relative bg-gradient-to-br from-[#f8faf8] to-[#e8f3ed] dark:from-[#1a3329] dark:to-[#0d1912] rounded-2xl shadow-lg p-8 hover:shadow-2xl hover:shadow-[#4a8570]/20 transition-all duration-300 border border-[#d4e7dd]/50 dark:border-[#2d5f4d]/50 hover:border-[#4a8570]/50 dark:hover:border-[#7a9d8f]/50"
             >
               <div className="absolute top-8 left-0 w-1 h-16 bg-gradient-to-b from-[#4a8570] to-[#7a9d8f] rounded-r-full"></div>
-              <div className="ml-6">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                  <div>
-                    <h3 className="text-2xl font-bold text-[#1a3329] dark:text-[#e8f3ed] mb-2">
-                      {edu.degree}
-                    </h3>
-                    <p className="text-xl text-[#4a8570] dark:text-[#7a9d8f] font-medium mb-1">
-                      {edu.institution}
-                    </p>
+              <div className="ml-6 flex gap-6">
+                <div className="w-16 h-16 bg-white rounded-lg p-2 border-2 border-[#4a8570] dark:border-[#7a9d8f] shadow-md flex-shrink-0">
+                  <img 
+                    src={edu.logo} 
+                    alt={`${edu.institution} logo`}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="flex-1">
+                  <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                    <div>
+                      <h3 className="text-2xl font-bold text-[#1a3329] dark:text-[#e8f3ed] mb-2">
+                        {edu.degree}
+                      </h3>
+                      <p className="text-xl text-[#4a8570] dark:text-[#7a9d8f] font-medium mb-1">
+                        {edu.institution}
+                      </p>
                     <p className="text-[#4a6b5c] dark:text-[#8fb5a3]">
                       {edu.location}
                     </p>
@@ -72,6 +92,7 @@ export default function Education() {
                     </li>
                   ))}
                 </ul>
+                </div>
               </div>
             </div>
           ))}
