@@ -17,11 +17,11 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center gap-3">
             <img 
-              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" 
+              src="images/xavierleffler.png" 
               alt="Profile" 
               className="w-10 h-10 rounded-full object-cover border-2 border-[#4a8570] dark:border-[#7a9d8f]"
             />
-            <span className="text-xl font-bold text-[#2d5f4d] dark:text-[#b8d4c6]">Portfolio</span>
+            <span className="text-xl font-bold text-[#2d5f4d] dark:text-[#b8d4c6]">Xavier Leffler - Portfolio</span>
           </div>
           
           {/* Desktop Navigation */}
